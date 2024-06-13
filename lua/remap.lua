@@ -1,3 +1,4 @@
+print 'loaded remaps'
 vim = vim
 
 vim.g.mapleader = ' '
