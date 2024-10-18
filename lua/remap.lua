@@ -90,6 +90,9 @@ vim.keymap.set('n', '<F3>', '<CMD>ToggleTerm 3<CR>')
 vim.keymap.set('n', '<F4>', '<CMD>ToggleTerm 4<CR>')
 vim.keymap.set('t', '<F9>', '<CMD>ToggleTerm<CR>')
 
+-- Visual block fix for SSH
+vim.keymap.set('n', '<leader>v', '<c-v>')
+
 -- HARD MODE
 --vim.keymap.set('n', 'v', function () print('nope'); end)
 --vim.keymap.set('n', 'vip', function () print('i said nope.'); end)

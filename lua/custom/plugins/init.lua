@@ -31,7 +31,12 @@ return {
     init = function()
       vim.g.barbar_auto_setup = false
     end,
-    opts = {},
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
   { 'lewis6991/gitsigns.nvim' },
@@ -66,7 +71,7 @@ return {
     end,
   },
   { 'enircobirto/vim-accent-portuguese' },
-  { 'ray-x/starry.nvim' },
+  -- { 'ray-x/starry.nvim' },
   { 'ThePrimeagen/vim-be-good' },
   {
     'akinsho/toggleterm.nvim',
@@ -103,7 +108,6 @@ return {
   { 'jose-elias-alvarez/null-ls.nvim' },
   { 'MunifTanjim/prettier.nvim' },
   { 'tpope/vim-commentary' },
-
   -- GAMES!!
   { 'alec-gibson/nvim-tetris' },
   { 'seandewar/nvimesweeper' },
@@ -111,4 +115,7 @@ return {
   { 'rktjmp/playtime.nvim' },
   { 'Eandrju/cellular-automaton.nvim' },
   { 'jim-fx/sudoku.nvim', cmd = 'Sudoku' },
+  { 'bluz71/vim-nightfly-colors' },
+  { 'hachy/eva01.vim' },
+  { 'pauchiner/pastelnight.nvim' },
 }
