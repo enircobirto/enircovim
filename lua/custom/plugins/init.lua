@@ -118,4 +118,17 @@ return {
   { 'bluz71/vim-nightfly-colors' },
   { 'hachy/eva01.vim' },
   { 'pauchiner/pastelnight.nvim' },
+  -- tailwind-tools.lua
+  {
+    'luckasRanarison/tailwind-tools.nvim',
+    name = 'tailwind-tools',
+    build = ':UpdateRemotePlugins',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-telescope/telescope.nvim', -- optional
+      'neovim/nvim-lspconfig', -- optional
+    },
+    opts = {}, -- your configuration
+  },
+  { 'junegunn/vim-easy-align' },
 }
