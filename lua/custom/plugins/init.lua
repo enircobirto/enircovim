@@ -138,4 +138,5 @@ return {
       -- Create your mappings here
     end,
   },
+  { 'echasnovski/mini.nvim', version = false },
 }

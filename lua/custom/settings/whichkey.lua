@@ -5,10 +5,7 @@ end
 
 local leadermappings = {
 
-  e = {
-    e = { "<CMD>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", 'Show diagnostics' },
-    a = { '<CMD>EasyAlign<CR>', 'Easy Align' },
-  },
+  e = { "<CMD>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", 'Show diagnostics' },
   ['k'] = { '<CMD>bdelete<CR>', 'Kill Buffer' }, -- Close current file
   ['q'] = { '<CMD>q<CR>', 'Quit' }, -- Quit Neovim after saving the file
   ['w'] = { '<CMD>w!<CR>', 'Save' }, -- Save current file
