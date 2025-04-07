@@ -48,6 +48,7 @@ vim.keymap.set('n', '<A-o>', '<Cmd>BufferOrderByDirectory<CR>')
 
 vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>')
 vim.keymap.set('i', 'poi', '<Escape><Cmd>w<CR>l')
+vim.keymap.set('i', 'POI', '<Escape><Cmd>w<CR>l')
 
 vim.keymap.set('n', '-', '<cmd>Oil <CR><cmd>set modifiable<cr>', {})
 vim.keymap.set('n', '<leader>-', '<cmd>set modifiable<CR>', {})
@@ -72,7 +73,7 @@ vim.keymap.set('n', '<leader><leader>q', '<CMD>ToggleTerm<CR>')
 vim.keymap.set('x', '<leader>c', ':Commentary<CR>')
 
 -- Debugger
-vim.keymap.set('n', '<leader>do', '<CMD>NvimTreeClose<CR><CMD>lua require"dapui".toggle()<CR>')
+-- vim.keymap.set('n', '<leader>do', '<CMD>NvimTreeClose<CR><CMD>lua require"dapui".toggle()<CR>')
 vim.keymap.set('n', '<F5>', '<CMD>lua require"dap".continue()<CR>')
 vim.keymap.set('n', '<F29>', '<CMD>lua require"dap".restart()<CR>')
 vim.keymap.set('n', '<F8>', '<CMD>lua require"dap".toggle_breakpoint()<CR>')

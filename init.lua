@@ -216,6 +216,8 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+DBCONFIG = dofile(vim.fn.stdpath("config") .. "/lua/custom/settings/db.lua")
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run

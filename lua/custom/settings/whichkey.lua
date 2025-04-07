@@ -3,6 +3,8 @@ local wk = require 'which-key'
 -- leader mappings
 wk.add {
   { '<leader>c', '<CMD>Commentary<CR>', desc = 'Comment line', nowait = true, remap = false },
+  { '<leader>do', '<CMD>NvimTreeClose<CR><CMD>lua require"dapui".toggle()<CR>', desc = 'Debug window', nowait = true, remap = false },
+  { '<leader>db', '<CMD>NvimTreeClose<CR><CMD>Dbee<CR>', desc = 'Dbee window', nowait = true, remap = false },
   { '<leader>ea', '<CMD>EasyAlign<CR>', desc = 'Easy Align', nowait = true, remap = false },
   { '<leader>ee', "<CMD>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", desc = 'Show diagnostics', nowait = true, remap = false },
   { '<leader>f', group = 'Files', nowait = true, remap = false },

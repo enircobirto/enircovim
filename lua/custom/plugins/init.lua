@@ -2,6 +2,7 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+--
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -184,4 +185,67 @@ return {
     ---@type render.md.UserConfig
     opts = {},
   },
+  {
+    'kndndrj/nvim-dbee',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+    build = function()
+      -- Install tries to automatically detect the install method.
+      -- if it fails, try calling it with one of these parameters:
+      --    "curl", "wget", "bitsadmin", "go"
+      require('dbee').install()
+    end,
+    config = function()
+      require('dbee').setup {
+        sources = {
+          require('dbee.sources').MemorySource:new {
+            {
+              name = 'DEV',
+              type = DBCONFIG.DBTYPE,
+              url = DBCONFIG.DEVDB,
+            },
+            {
+              name = 'PROD',
+              type = DBCONFIG.DBTYPE,
+              url = DBCONFIG.PRODDB,
+            },
+          },
+          require('dbee.sources').EnvSource:new 'DBEE_CONNECTIONS',
+          require('dbee.sources').FileSource:new(vim.fn.stdpath 'cache' .. '/dbee/persistence.json'),
+        },
+        result = {
+          page_size = 1000,
+        },
+      }
+    end,
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      {
+        'MattiasMTS/cmp-dbee',
+        dependencies = {
+          { 'kndndrj/nvim-dbee' },
+        },
+        ft = 'sql', -- optional but good to have
+        opts = {}, -- needed
+      },
+    },
+    opts = {
+      sources = {
+        { 'cmp-dbee' },
+      },
+    },
+  },
+  {
+    'barklan/capslock.nvim',
+    lazy = true,
+    keys = {
+      { '<C-l>', '<Plug>CapsLockToggle', mode = { 'i', 'c' } },
+      { '<leader>c', '<Plug>CapsLockToggle', mode = { 'n' } },
+    },
+    config = true,
+  },
+  { 'github/copilot.vim' },
 }
